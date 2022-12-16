@@ -42,15 +42,16 @@ while run:
             os.mkdir(folder)
         file_path = os.path.join(folder, name)
 
-        with open(file_path, 'wb') as f:
-            f.write(response.content)
-            print(f'Saved {file_path}')
+        files = os.listdir(folder)
+        files.sort(key=lambda x: os.path.getmtime(os.path.join(folder, x)))
+        last_file_path = os.path.join(folder, files[-1])
 
-        '''if not os.path.exists(file) or os.path.getsize(file) == int(url.headers['Content-Length']):
-            response = requests.get(url)
-            with open(file, 'wb') as f:
+        if not os.path.getsize(last_file_path) == int(response.headers['Content-Length']):
+            with open(file_path, 'wb') as f:
                 f.write(response.content)
-                print(f'Saved {file}')'''
+                print(f'Saved {file_path}')
+        else:
+            print(f'File {file_path} already saved')
 
     for i in range(60):
         print(f'\tWaiting {60-i} seconds', end='\r')
