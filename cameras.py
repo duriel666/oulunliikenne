@@ -28,8 +28,6 @@ def countdown(num):
         time.sleep(1)
     print('\n\tContinuing...')
 
-# Save images
-
 
 url_list = []
 
