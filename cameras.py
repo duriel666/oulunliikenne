@@ -26,7 +26,7 @@ def countdown(num):
     for i in range(num):
         print(f'\tWaiting {num-i} seconds', end='\r')
         time.sleep(1)
-    print('\tContinuing...')
+    print('\n\tContinuing...')
 
 # Save images
 
@@ -38,24 +38,6 @@ with open('cameras.json') as f:
     for camera in data['data']['cameras']:
         for preset in camera['presets']:
             url_list.append(preset['imageUrl'])
-
-'''if not os.path.exists('images'):
-    for url in url_list:
-        _, file = os.path.split(url)
-        response = requests.get(url)
-        current_time = time.strftime('%Y%m%d%H%M%S', time.localtime())
-        name = file.split('.')[0]+'_'+current_time+'.'+file.split('.')[1]
-        folder = 'images/'+file.split('.')[0]
-
-        if not os.path.exists(folder):
-            os.mkdir(folder)
-
-        file_path = os.path.join(folder, name)
-        with open(file_path, 'wb') as f:
-            f.write(response.content)
-            print(f'Saved {file_path}')
-
-countdown(10)'''
 
 run = True
 while run:
@@ -85,14 +67,14 @@ while run:
             last_file_size = 0
             last_file2_size = 0
 
-        file_size = int(response.headers['Content-Length'])
         try:
+            file_size = int(response.headers['Content-Length'])
             if last_file_size != file_size and last_file2_size != file_size:
                 with open(file_path, 'wb') as f:
                     f.write(response.content)
-                    print(f'Saved {file_path}')
+                    print(f'Saved {file_path} - {len(files)} files in folder')
             else:
-                print(f'File {file_path} already downloaded')
+                print(f'File {file_path} already downloaded - {len(files)} files in folder')
         except:
             pass
 
