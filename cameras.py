@@ -39,20 +39,21 @@ with open('cameras.json') as f:
         for preset in camera['presets']:
             url_list.append(preset['imageUrl'])
 
-for url in url_list:
-    _, file = os.path.split(url)
-    response = requests.get(url)
-    current_time = time.strftime('%Y%m%d%H%M%S', time.localtime())
-    name = file.split('.')[0]+'_'+current_time+'.'+file.split('.')[1]
-    folder = 'images/'+file.split('.')[0]
+if not os.path.exists('images'):
+    for url in url_list:
+        _, file = os.path.split(url)
+        response = requests.get(url)
+        current_time = time.strftime('%Y%m%d%H%M%S', time.localtime())
+        name = file.split('.')[0]+'_'+current_time+'.'+file.split('.')[1]
+        folder = 'images/'+file.split('.')[0]
 
-    if not os.path.exists(folder):
-        os.mkdir(folder)
+        if not os.path.exists(folder):
+            os.mkdir(folder)
 
-    file_path = os.path.join(folder, name)
-    with open(file_path, 'wb') as f:
-        f.write(response.content)
-        print(f'Saved {file_path}')
+        file_path = os.path.join(folder, name)
+        with open(file_path, 'wb') as f:
+            f.write(response.content)
+            print(f'Saved {file_path}')
 
 countdown(10)
 
