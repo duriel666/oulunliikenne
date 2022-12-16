@@ -38,9 +38,11 @@ with open('cameras.json') as f:
             url_list.append(preset['imageUrl'])
 
 run = True
+
 while run:
     saved = 0
     start_time = time.time()
+
     for url in url_list:
         _, file = os.path.split(url)
         response = requests.get(url)
@@ -80,5 +82,6 @@ while run:
                     f'File \"{file_path}\" already downloaded - {len(files)} files in folder \"{folder}\"')
         except:
             pass
+
     print(f'\tSaved {saved} files in {time.time()-start_time:.2f} seconds')
     countdown(180)
