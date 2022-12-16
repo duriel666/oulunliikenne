@@ -39,6 +39,8 @@ with open('cameras.json') as f:
 
 run = True
 while run:
+    saved = 0
+    start_time = time.time()
     for url in url_list:
         _, file = os.path.split(url)
         response = requests.get(url)
@@ -70,12 +72,13 @@ while run:
             if last_file_size != file_size and last_file2_size != file_size:
                 with open(file_path, 'wb') as f:
                     f.write(response.content)
+                    saved += 1
                     print(
-                        f'Saved \"{file_path}\" {file_size/1024:.0f} kb - {len(files)} files in folder \"{folder}\"')
+                        f'Saved \"{file_path}\" {file_size/1024:.0f} kb - {len(files)+1} files in folder \"{folder}\"')
             else:
                 print(
                     f'File \"{file_path}\" already downloaded - {len(files)} files in folder \"{folder}\"')
         except:
             pass
-
-    countdown(60)
+    print(f'\tSaved {saved} files in {time.time()-start_time:.2f} seconds')
+    countdown(180)
