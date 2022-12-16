@@ -51,7 +51,7 @@ while run:
             with open(file, 'wb') as f:
                 f.write(response.content)
                 print(f'Saved {file}')'''
-        
+
     for i in range(60):
-        print(f'Waiting {60-i} seconds')
+        print(f'\tWaiting {60-i} seconds', end='\r')
         time.sleep(1)
