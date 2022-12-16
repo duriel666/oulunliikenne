@@ -30,17 +30,25 @@ with open('cameras.json') as f:
     for camera in data['data']['cameras']:
         for preset in camera['presets']:
             url_list.append(preset['imageUrl'])
-
-for url in url_list:
-    _, file_path = os.path.split(url)
-    response = requests.get(url)
-    current_time = time.strftime('%Y%m%d%H%M%S', time.localtime())
-    name = file_path.split('.')[0]+'_'+current_time+'.'+file_path.split('.')[1]
-    with open(name, 'wb') as f:
-        f.write(response.content)
-        print(f'Saved {name}')
-    '''if not os.path.exists(file_path) or os.path.getsize(file_path) == int(url.headers['Content-Length']):
+run = True
+while run:
+    for url in url_list:
+        _, file = os.path.split(url)
         response = requests.get(url)
+        current_time = time.strftime('%Y%m%d%H%M%S', time.localtime())
+        name = file.split('.')[0]+'_'+current_time+'.'+file.split('.')[1]
+        folder = 'images/'+file.split('.')[0]
+        if not os.path.exists(folder):
+            os.mkdir(folder)
+        file_path = os.path.join(folder, name)
+
         with open(file_path, 'wb') as f:
             f.write(response.content)
-            print(f'Saved {file_path}')'''
+            print(f'Saved {file_path}')
+
+        '''if not os.path.exists(file) or os.path.getsize(file) == int(url.headers['Content-Length']):
+            response = requests.get(url)
+            with open(file, 'wb') as f:
+                f.write(response.content)
+                print(f'Saved {file}')'''
+    time.sleep(60)
