@@ -39,7 +39,7 @@ with open('cameras.json') as f:
         for preset in camera['presets']:
             url_list.append(preset['imageUrl'])
 
-if not os.path.exists('images'):
+'''if not os.path.exists('images'):
     for url in url_list:
         _, file = os.path.split(url)
         response = requests.get(url)
@@ -55,7 +55,7 @@ if not os.path.exists('images'):
             f.write(response.content)
             print(f'Saved {file_path}')
 
-countdown(10)
+countdown(10)'''
 
 run = True
 while run:
@@ -73,11 +73,21 @@ while run:
 
         files = os.listdir(folder)
         files.sort(key=lambda x: os.path.getmtime(os.path.join(folder, x)))
-        last_file_path = os.path.join(folder, files[-1])
-        last_file_size = os.path.getsize(last_file_path)
+        if len(files) > 0:
+            last_file_path = os.path.join(folder, files[-1])
+            last_file_size = os.path.getsize(last_file_path)
+            if len(files) > 1:
+                last_file2_path = os.path.join(folder, files[-2])
+                last_file2_size = os.path.getsize(last_file2_path)
+            else:
+                last_file2_size = 0
+        else:
+            last_file_size = 0
+            last_file2_size = 0
 
+        file_size = int(response.headers['Content-Length'])
         try:
-            if not last_file_size == int(response.headers['Content-Length']):
+            if last_file_size != file_size and last_file2_size != file_size:
                 with open(file_path, 'wb') as f:
                     f.write(response.content)
                     print(f'Saved {file_path}')
