@@ -26,6 +26,7 @@ def countdown(num):
     for i in range(num):
         print(f'\tWaiting {num-i} seconds', end='\r')
         time.sleep(1)
+    print('Continuing...')
 
 # Save images
 
