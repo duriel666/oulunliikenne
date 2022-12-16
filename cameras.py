@@ -78,4 +78,4 @@ while run:
         except:
             pass
 
-    countdown(10)
+    countdown(60)
