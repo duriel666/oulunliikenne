@@ -72,9 +72,11 @@ while run:
             if last_file_size != file_size and last_file2_size != file_size:
                 with open(file_path, 'wb') as f:
                     f.write(response.content)
-                    print(f'Saved {file_path} - {len(files)} files in folder')
+                    print(
+                        f'Saved \"{file_path}\" {file_size/1024:.0f} kb - {len(files)} files in folder \"{folder}\"')
             else:
-                print(f'File {file_path} already downloaded - {len(files)} files in folder')
+                print(
+                    f'File \"{file_path}\" already downloaded - {len(files)} files in folder \"{folder}\"')
         except:
             pass
 
