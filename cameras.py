@@ -84,4 +84,4 @@ while run:
             pass
 
     print(f'\tSaved {saved} files in {time.time()-start_time:.2f} seconds')
-    countdown(180)
+    countdown(120)
