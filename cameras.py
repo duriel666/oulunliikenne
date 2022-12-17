@@ -48,8 +48,12 @@ while run:
         response = requests.get(url)
         current_time = time.strftime('%Y%m%d%H%M%S', time.localtime())
         name = file.split('.')[0]+'_'+current_time+'.'+file.split('.')[1]
-        folder = 'images/'+file.split('.')[0]
 
+        subfolder = 'images2'
+        folder = subfolder+file.split('.')[0]
+
+        if not os.path.exists(subfolder):
+            os.mkdir(subfolder)
         if not os.path.exists(folder):
             os.mkdir(folder)
 
