@@ -24,7 +24,7 @@ with open('cameras.json', 'w') as f:
 
 def countdown(num):
     for i in range(num):
-        print(f'\tWaiting {num-i} seconds', end='\r')
+        print(f'\tWaiting {num-i-1} seconds', end='\r')
         time.sleep(1)
     print('\n\tContinuing...')
 
@@ -36,6 +36,10 @@ with open('cameras.json') as f:
     for camera in data['data']['cameras']:
         for preset in camera['presets']:
             url_list.append(preset['imageUrl'])
+
+subfolder = 'images2'
+if not os.path.exists(subfolder):
+    os.mkdir(subfolder)
 
 run = True
 
@@ -49,11 +53,8 @@ while run:
         current_time = time.strftime('%Y%m%d%H%M%S', time.localtime())
         name = file.split('.')[0]+'_'+current_time+'.'+file.split('.')[1]
 
-        subfolder = 'images2'
-        folder = subfolder+file.split('.')[0]
+        folder = subfolder+'/'+file.split('.')[0]
 
-        if not os.path.exists(subfolder):
-            os.mkdir(subfolder)
         if not os.path.exists(folder):
             os.mkdir(folder)
 
