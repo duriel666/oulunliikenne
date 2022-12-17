@@ -37,7 +37,7 @@ with open('cameras.json') as f:
         for preset in camera['presets']:
             url_list.append(preset['imageUrl'])
 
-subfolder = 'images2'
+subfolder = 'images'
 if not os.path.exists(subfolder):
     os.mkdir(subfolder)
 
