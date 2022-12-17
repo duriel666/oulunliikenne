@@ -4,7 +4,14 @@ import os
 import time
 
 
+total_images = 0
+total_size = 0
+run_time = time.time()
+
+
 def start():
+    global total_images
+    global total_size
     q_address = 'https://api.oulunliikenne.fi/proxy/graphql'
     query = 'query {cameras {cameraId,name,lat,lon,presets {presetId,presentationName,imageUrl,measuredTime}}}'
     variables = {}
@@ -74,6 +81,8 @@ def start():
                     with open(file_path, 'wb') as f:
                         f.write(response.content)
                         saved += 1
+                        total_images += 1
+                        total_size += file_size
                         print(
                             f'Saved \"{file_path}\" {file_size/1024:.0f} kb - {len(files)+1} files in folder \"{folder}\"')
                 else:
@@ -83,14 +92,19 @@ def start():
                 pass
 
         print(f'\tSaved {saved} files in {time.time()-start_time:.2f} seconds')
+        print(
+            f'Total images downloaded this session {total_images} - {total_size/1024/1024:.2f} Mb')
+        print(
+            f'Total running time this session {time.time()-run_time:.2f} seconds')
+        # tarkista tiedostojen määrä hakemistoista
         countdown(120)
 
 
 def countdown(num):
     for i in range(num):
-        print(f'\tWaiting {num-i-1} seconds', end='\r')
+        print(f'\tWaiting {num-i-1} seconds     ', end='\r')
         time.sleep(1)
-    print('\n\tContinuing...')
+    print('\n\tContinuing...     ')
 
 
 if __name__ == '__main__':
