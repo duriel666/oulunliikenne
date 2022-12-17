@@ -23,13 +23,14 @@ def start():
     with open('parking.json', 'w') as f:
         f.write(json.dumps(response.json(), indent=4))
 
-    '''url_list = []
+    value_list = []
 
-    with open('cameras.json') as f:
+    with open('lam.json') as f:
         data = json.load(f)
-        for camera in data['data']['cameras']:
-            for preset in camera['presets']:
-                url_list.append(preset['imageUrl'])'''
+        for carParks in data['data']['carParks']:
+            values = {'name': carParks['name'], 'maxCapacity': carParks['maxCapacity'],
+                      'spacesAvailable': carParks['spacesAvailable']}
+            value_list.append(values)
 
 
 if __name__ == '__main__':
