@@ -25,12 +25,26 @@ def start():
 
     value_list = []
 
-    with open('lam.json') as f:
+    with open('parking.json') as f:
         data = json.load(f)
-        for carParks in data['data']['carParks']:
-            values = {'name': carParks['name'], 'maxCapacity': carParks['maxCapacity'],
-                      'spacesAvailable': carParks['spacesAvailable']}
+        for carPark in data['data']['carParks']:
+            values = {'name': carPark['name'], 'maxCapacity': carPark['maxCapacity'],
+                      'spacesAvailable': carPark['spacesAvailable']}
             value_list.append(values)
+    '''{
+    "data": {
+        "carParks": [
+            {
+                "carParkId": "103",
+                "name": "Raksilan Marketit",
+                "lat": 65.01125565,
+                "lon": 25.49191761,
+                "maxCapacity": null,
+                "spacesAvailable": null
+            },'''
+            
+    for i in value_list:
+        print(i)
 
 
 if __name__ == '__main__':

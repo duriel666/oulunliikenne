@@ -1,0 +1,150 @@
+{
+    "data": {
+        "carParks": [
+            {
+                "carParkId": "103",
+                "name": "Raksilan Marketit",
+                "lat": 65.01125565,
+                "lon": 25.49191761,
+                "maxCapacity": null,
+                "spacesAvailable": null
+            },
+            {
+                "carParkId": "102",
+                "name": "Linja-autoasema",
+                "lat": 65.00918586,
+                "lon": 25.48313011,
+                "maxCapacity": null,
+                "spacesAvailable": null
+            },
+            {
+                "carParkId": "2",
+                "name": "Autotori",
+                "lat": 65.01111078,
+                "lon": 25.4649031,
+                "maxCapacity": 150,
+                "spacesAvailable": 63
+            },
+            {
+                "carParkId": "104",
+                "name": "Ouluhalli",
+                "lat": 65.00704635,
+                "lon": 25.50458772,
+                "maxCapacity": null,
+                "spacesAvailable": null
+            },
+            {
+                "carParkId": "13",
+                "name": "MediparkPintaP",
+                "lat": null,
+                "lon": null,
+                "maxCapacity": 0,
+                "spacesAvailable": 0
+            },
+            {
+                "carParkId": "8",
+                "name": "Rehaparkki",
+                "lat": 65.01073785,
+                "lon": 25.51289086,
+                "maxCapacity": 357,
+                "spacesAvailable": 354
+            },
+            {
+                "carParkId": "9",
+                "name": "Avohoitotalo",
+                "lat": 65.00697474,
+                "lon": 25.51407936,
+                "maxCapacity": 65,
+                "spacesAvailable": 54
+            },
+            {
+                "carParkId": "1",
+                "name": "Technopolis",
+                "lat": 65.00782341,
+                "lon": 25.46884555,
+                "maxCapacity": 54,
+                "spacesAvailable": 94
+            },
+            {
+                "carParkId": "6",
+                "name": "Kivisyd\u00e4n",
+                "lat": 65.01201845,
+                "lon": 25.47747895,
+                "maxCapacity": 753,
+                "spacesAvailable": 680
+            },
+            {
+                "carParkId": "61",
+                "name": "Kivisyd\u00e4n",
+                "lat": 65.01470741,
+                "lon": 25.46510463,
+                "maxCapacity": 753,
+                "spacesAvailable": 680
+            },
+            {
+                "carParkId": "5",
+                "name": "Autosaari",
+                "lat": 65.01088904,
+                "lon": 25.4732754,
+                "maxCapacity": 200,
+                "spacesAvailable": 165
+            },
+            {
+                "carParkId": "4",
+                "name": "Autoheikki",
+                "lat": 65.01498236,
+                "lon": 25.47918373,
+                "maxCapacity": 95,
+                "spacesAvailable": 27
+            },
+            {
+                "carParkId": "100",
+                "name": "Torinranta",
+                "lat": 65.01474128,
+                "lon": 25.46626395,
+                "maxCapacity": null,
+                "spacesAvailable": null
+            },
+            {
+                "carParkId": "7",
+                "name": "Medipark",
+                "lat": 65.00987539,
+                "lon": 25.51894066,
+                "maxCapacity": 210,
+                "spacesAvailable": 0
+            },
+            {
+                "carParkId": "11",
+                "name": "Sairaalaparkki",
+                "lat": 65.00900919,
+                "lon": 25.51300372,
+                "maxCapacity": 102,
+                "spacesAvailable": 41
+            },
+            {
+                "carParkId": "3",
+                "name": "Pekuri",
+                "lat": 65.01172727,
+                "lon": 25.46764256,
+                "maxCapacity": 213,
+                "spacesAvailable": 0
+            },
+            {
+                "carParkId": "12",
+                "name": "EtelainenPAlue",
+                "lat": null,
+                "lon": null,
+                "maxCapacity": 0,
+                "spacesAvailable": 0
+            },
+            {
+                "carParkId": "10",
+                "name": "Valkea",
+                "lat": 65.01073984,
+                "lon": 25.47141987,
+                "maxCapacity": 63,
+                "spacesAvailable": 0
+            }
+        ]
+    }
+}

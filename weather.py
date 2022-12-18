@@ -23,13 +23,35 @@ def start():
     with open('weather.json', 'w') as f:
         f.write(json.dumps(response.json(), indent=4))
 
-    '''url_list = []
+    value_list = []
 
-    with open('cameras.json') as f:
+    with open('weather.json') as f:
         data = json.load(f)
-        for camera in data['data']['cameras']:
-            for preset in camera['presets']:
-                url_list.append(preset['imageUrl'])'''
+        for weather in data['data']['weatherStations']:
+            for sensorValues in weather['sensorValues']:
+                values = {'roadStationId': sensorValues['roadStationId'],
+                          'name': sensorValues['name'], 'sensorValue': sensorValues['sensorValue']}
+                value_list.append(values)
+    '''{
+    "data": {
+        "weatherStations": [
+            {
+                "weatherStationId": "15010",
+                "name": "TEST_st833_Oulu_Vesala_Lumi",
+                "lat": 65.031926,
+                "lon": 26.058409,
+                "collectionStatus": "GATHERING",
+                "measuredTime": "2022-12-18T02:57:00Z",
+                "sensorValues": [
+                    {
+                        "roadStationId": 15010,
+                        "name": "SADE",
+                        "sensorValue": 0,
+                        "sensorUnit": "///"
+                    },'''
+
+    for i in value_list:
+        print(i)
 
 
 if __name__ == '__main__':
