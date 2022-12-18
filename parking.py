@@ -31,18 +31,7 @@ def start():
             values = {'name': carPark['name'], 'maxCapacity': carPark['maxCapacity'],
                       'spacesAvailable': carPark['spacesAvailable']}
             value_list.append(values)
-    '''{
-    "data": {
-        "carParks": [
-            {
-                "carParkId": "103",
-                "name": "Raksilan Marketit",
-                "lat": 65.01125565,
-                "lon": 25.49191761,
-                "maxCapacity": null,
-                "spacesAvailable": null
-            },'''
-            
+
     for i in value_list:
         print(i)
 

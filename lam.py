@@ -34,23 +34,7 @@ def start():
                 values = {'roadStationId': sensorValues['roadStationId'],
                           'name': sensorValues['name'], 'sensorValue': sensorValues['sensorValue']}
                 value_list.append(values)
-    '''{
-    "data": {
-        "tmsStations": [
-            {
-                "tmsStationId": "21201",
-                "name": "vt4_Oulu_Inti\u00f6_LML",
-                "lat": 65.020043,
-                "lon": 25.508104,
-                "collectionStatus": "GATHERING",
-                "measuredTime": "2022-12-18T02:14:53Z",
-                "sensorValues": [
-                    {
-                        "roadStationId": 21201,
-                        "name": "KESKINOPEUS_60MIN_KIINTEA_SUUNTA1",
-                        "sensorValue": 100,
-                        "sensorUnit": "km/h"
-                    },'''
+
     for i in value_list:
         print(i)
 
