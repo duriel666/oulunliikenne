@@ -33,7 +33,8 @@ def start():
             value_list.append(values)
 
     for i in value_list:
-        print(i)
+        print(
+            f'{i["name"]} - Max capacity: {i["maxCapacity"]} - Spaces available: {i["spacesAvailable"]}')
 
 
 if __name__ == '__main__':

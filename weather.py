@@ -36,7 +36,8 @@ def start():
                 value_list.append(values)
 
     for i in value_list:
-        print(i)
+        print(
+            f'{i["roadStationId"]} - {i["name"]} - Value: {i["sensorValue"]}')
 
 
 if __name__ == '__main__':
