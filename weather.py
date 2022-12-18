@@ -25,6 +25,8 @@ def start():
 
     value_list = []
 
+    # Tarvii vielä listan paikkojen nimistä jne jne
+
     with open('weather.json') as f:
         data = json.load(f)
         for weather in data['data']['weatherStations']:
