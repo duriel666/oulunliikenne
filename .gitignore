@@ -1,8 +1,7 @@
+*.json
 *.jpg
 *.jpeg
 *.gif
 *.png
 *.bmp
 
-*.json
-.json
