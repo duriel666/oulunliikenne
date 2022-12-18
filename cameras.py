@@ -9,7 +9,7 @@ total_size = 0
 run_time = time.time()
 
 
-def start():
+def cameras_start():
     global total_images
     global total_size
     q_address = 'https://api.oulunliikenne.fi/proxy/graphql'
@@ -108,4 +108,4 @@ def countdown(num):
 
 
 if __name__ == '__main__':
-    start()
+    cameras_start()

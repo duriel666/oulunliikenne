@@ -6,7 +6,7 @@ import time
 # lam = liikenteen automaattinen mittaus
 
 
-def start():
+def lam_start():
     q_address = 'https://api.oulunliikenne.fi/proxy/graphql'
     query = 'query {tmsStations {tmsStationId,name,lat,lon,collectionStatus,measuredTime,sensorValues {roadStationId,name,sensorValue,sensorUnit}}}'
     variables = {}
@@ -40,4 +40,4 @@ def start():
 
 
 if __name__ == '__main__':
-    start()
+    lam_start()

@@ -4,7 +4,7 @@ import os
 import time
 
 
-def start():
+def parking_start():
     q_address = 'https://api.oulunliikenne.fi/proxy/graphql'
     query = 'query GetAllCarParks {carParks {carParkId,name,lat,lon,maxCapacity,spacesAvailable}}'
     variables = {}
@@ -38,4 +38,4 @@ def start():
 
 
 if __name__ == '__main__':
-    start()
+    parking_start()

@@ -4,7 +4,7 @@ import os
 import time
 
 
-def start():
+def weather_start():
     q_address = 'https://api.oulunliikenne.fi/proxy/graphql'
     query = 'query GetAllWeatherStations {weatherStations {weatherStationId,name,lat,lon,collectionStatus,measuredTime,sensorValues {roadStationId,name,sensorValue,sensorUnit}}}'
     variables = {}
@@ -41,4 +41,4 @@ def start():
 
 
 if __name__ == '__main__':
-    start()
+    weather_start()
