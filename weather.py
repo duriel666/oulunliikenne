@@ -25,7 +25,7 @@ def weather_start():
 
     value_list = []
 
-    # Tarvii vielä listan paikkojen nimistä jne jne
+    # Tarvii vielä lisäksi paikkojen nimet jne jne
 
     with open('weather.json') as f:
         data = json.load(f)
