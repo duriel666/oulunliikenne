@@ -1,7 +1,4 @@
-import json
-import requests
-import os
-import time
+from imports import *
 
 
 def weather_start():

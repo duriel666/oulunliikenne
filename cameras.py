@@ -1,7 +1,4 @@
-import json
-import requests
-import os
-import time
+from imports import *
 
 
 total_images = 0

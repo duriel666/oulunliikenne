@@ -1,7 +1,5 @@
-import json
-import requests
-import os
-import time
+from imports import *
+
 
 # lam = liikenteen automaattinen mittaus
 
