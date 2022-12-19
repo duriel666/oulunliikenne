@@ -49,7 +49,8 @@ def cameras_start():
             _, file = os.path.split(url)
             response = requests.get(url)
             current_time = time.strftime('%Y%m%d%H%M%S', time.localtime())
-            name = file.split('.')[0]+'_'+current_time+'.'+file.split('.')[1]
+            name = file.split('.')[0] + '_' + \
+                current_time+'.' + file.split('.')[1]
 
             folder = subfolder+'/'+file.split('.')[0]
 
