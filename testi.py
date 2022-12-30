@@ -14,3 +14,6 @@ while run:
         print(
             f'{i} - {time.time() - start_time:.4f} s since last prime - {total} primes found - {time.time() - total_time:.2f} s total time')
     i += 1
+
+#q: capital of finland?
+#a: helsinki
