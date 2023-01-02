@@ -26,12 +26,12 @@ def parking_start():
         data = json.load(f)
         for carPark in data['data']['carParks']:
             values = {'name': carPark['name'], 'maxCapacity': carPark['maxCapacity'],
-                      'spacesAvailable': carPark['spacesAvailable']}
+                      'spacesAvailable': carPark['spacesAvailable'], 'lat': carPark['lat'], 'lon': carPark['lon']}
             value_list.append(values)
 
     for i in value_list:
         print(
-            f'{i["name"]} - Max capacity: {i["maxCapacity"]} - Spaces available: {i["spacesAvailable"]}')
+            f'{i["name"]} - Max capacity: {i["maxCapacity"]} - Spaces available: {i["spacesAvailable"]} - {i["lat"]} - {i["lon"]}')
 
 
 if __name__ == '__main__':
