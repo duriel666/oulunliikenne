@@ -29,8 +29,8 @@ def lam_start():
         data = json.load(f)
         for tmsStation in data['data']['tmsStations']:
             for sensorValues in tmsStation['sensorValues']:
-                values = {'roadStationId': sensorValues['roadStationId'],
-                          'name': sensorValues['name'], 'sensorValue': sensorValues['sensorValue']}
+                values = {'roadStationId': sensorValues['roadStationId'], 'name': sensorValues['name'],
+                          'sensorValue': sensorValues['sensorValue'], 'lat': tmsStation['lat'], 'lon': tmsStation['lon']}
                 value_list.append(values)
 
     for i in value_list:
