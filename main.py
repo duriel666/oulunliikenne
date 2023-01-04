@@ -1,4 +1,4 @@
-from threading import Thread
+import threading
 from cameras import *
 from lam import *
 from parking import *
@@ -8,18 +8,20 @@ import time
 
 class Main:
     def __init__(self, started):
-        self.start_list = started
+        self.started = started
+        self.t = threading.Thread(target=self.run(self.started))
+        self.t.start()
+        self.t.join()
 
-    def start(self):
-            self.start()
-            time.sleep(1)
+    def run(self, started):
+        self.started()
+        
 
 
 def main():
     threads = [cameras_start, lam_start, parking_start, weather_start]
     for thread in threads:
-        t = Main(thread)
-        t.start()
+        Main(thread)
 
 
 if __name__ == '__main__':
