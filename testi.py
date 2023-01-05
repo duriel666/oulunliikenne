@@ -20,3 +20,7 @@ while run:
 
 #q: python code to calculate sum of nu,bers up to x?
 #a: sum(range(x+1))
+
+#q: python code to calculate square root of x?
+#a: x**0.5
+
