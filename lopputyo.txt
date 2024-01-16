@@ -1,0 +1,43 @@
+koodaus tekoälyn avulla
+    johdanto
+    tietoa tekoälystä
+        termejä
+        historiaa
+        vielä jotaki?
+    android
+        historia?
+        java
+        googlen dev jutuista kehittämisen sääntöjä
+            suunnittelu
+            ui
+            yhteensopivuus eri laitteilla
+            data ja turvajutut
+    softat
+        android studio
+            kielet
+            java
+                historia
+                termejä/erikoisuuksia?
+            kotlin
+            sql
+            python? tuskin käytössä
+        vscode?
+        ?
+    tekoäly softat
+        chatgpt
+            hmmm
+        bing
+        dall-e
+            ei varmaan kyllä kannata kuvan teko jutuista selittää…
+        jos ei dall-e niin joku kolmas
+    appsin teko
+        android studio ja vscode tänne?
+        ideointi
+        suunnittelu
+        koodaukseen tarvittavat jutut
+        koodaus
+        testaus
+        julkaisu jos keksii sisältöä. oulun liikenteen avoin data ja mitä?
+    johtopäätökset
+    linkit
+    liitteet

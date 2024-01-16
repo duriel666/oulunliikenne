@@ -6,23 +6,21 @@ from weather import *
 import time
 
 
-class Main:
-    def __init__(self, started):
-        self.started = started
-        self.t = threading.Thread(target=self.run(self.started))
-        self.t.start()
-        self.t.join()
-
-    def run(self, started):
-        self.started()
-        
-
-
-def main():
+if __name__ == "__main__":
+    total_time_start = time.time()
     threads = [cameras_start, lam_start, parking_start, weather_start]
-    for thread in threads:
-        Main(thread)
 
+    thread_list = []
+    for thread_name in threads:
+        t = threading.Thread(target=thread_name)
+        t.daemon = True
+        t.start()
+        thread_list.append(t)
 
-if __name__ == '__main__':
-    main()
+    try:
+        while threading.active_count() > 0:
+            time.sleep(0.1)
+    except KeyboardInterrupt:
+        total_runtime = time.time() - total_time_start
+        print("--- Terminated by user ---")
+        print("--- Total runtime: {:.2f} seconds ---".format(total_runtime))
