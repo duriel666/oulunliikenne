@@ -7,12 +7,12 @@ import time
 
 
 if __name__ == "__main__":
-    total_time_start = time.time()
-    threads = [cameras_start, lam_start, parking_start, weather_start]
+    total_time_start: float = time.time()
+    threads: list[Any] = [cameras_start, lam_start, parking_start, weather_start]
 
-    thread_list = []
+    thread_list: list[Any] = []
     for thread_name in threads:
-        t = threading.Thread(target=thread_name)
+        t: Any = threading.Thread(target=thread_name)
         t.daemon = True
         t.start()
         thread_list.append(t)
@@ -21,6 +21,6 @@ if __name__ == "__main__":
         while threading.active_count() > 0:
             time.sleep(0.1)
     except KeyboardInterrupt:
-        total_runtime = time.time() - total_time_start
+        total_runtime: float = time.time() - total_time_start
         print("--- Terminated by user ---")
         print("--- Total runtime: {:.2f} seconds ---".format(total_runtime))
