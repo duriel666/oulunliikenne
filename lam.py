@@ -5,19 +5,21 @@ from imports import *
 
 
 def lam_start():
-    q_address = "https://api.oulunliikenne.fi/proxy/graphql"
-    query = "query {tmsStations {tmsStationId,name,lat,lon,collectionStatus,measuredTime,sensorValues {roadStationId,name,sensorValue,sensorUnit}}}"
-    variables = {}
+    q_address: str = "https://api.oulunliikenne.fi/proxy/graphql"
+    query: str = (
+        "query {tmsStations {tmsStationId,name,lat,lon,collectionStatus,measuredTime,sensorValues {roadStationId,name,sensorValue,sensorUnit}}}"
+    )
+    variables: dict = {}
 
-    headers = {"Content-Type": "application/json", "Accept": "application/json"}
+    headers: dict = {"Content-Type": "application/json", "Accept": "application/json"}
 
-    body = {"query": query, "variables": variables}
+    body: dict = {"query": query, "variables": variables}
 
-    response = requests.post(q_address, json=body, headers=headers)
+    response: Any = requests.post(q_address, json=body, headers=headers)
     with open("lam.json", "w") as f:
         f.write(json.dumps(response.json(), indent=4))
 
-    value_list = []
+    value_list: list = []
 
     with open("lam.json") as f:
         data = json.load(f)
