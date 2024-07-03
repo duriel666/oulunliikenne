@@ -1,3 +1,5 @@
+# Description: This script downloads images from the Oulu traffic cameras API and saves them to the local drive.
+
 from imports import *
 
 

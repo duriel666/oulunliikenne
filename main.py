@@ -1,3 +1,6 @@
+# Description: This file is the main file of the project.
+# It starts the threads for the cameras, LAM, parking and weather.
+
 import threading
 from cameras import *
 from lam import *

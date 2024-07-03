@@ -1,7 +1,9 @@
+# Description: This script is used to get the traffic data from the Oulu city's traffic API.
+
 from imports import *
 
 
-# lam = liikenteen automaattinen mittaus
+# LAM = Liikenteen Automaattinen Mittaus - Automatic Traffic Measurement
 
 
 def lam_start():

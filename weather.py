@@ -1,3 +1,5 @@
+# Description: This script fetches weather data from Oulu's traffic API and prints it out.
+
 from imports import *
 
 

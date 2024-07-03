@@ -1,3 +1,5 @@
+# Description: This script fetches the parking data from the Oulu Traffic API and prints the data to the console.
+
 from imports import *
 
 
